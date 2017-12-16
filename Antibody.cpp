@@ -64,17 +64,18 @@ Antibody::Antibody(ProblemInstance problem, RandomNumberGenerator &random)
     std::vector<int> route;
     for (int i = 0; i < stops.size(); i++)
     {
-        if (passengers + stops[i].size() <= capacity)
+        int stopIndex = stopsShuffled[i];
+        if (passengers + stops[stopIndex].size() <= capacity)
         {
-            passengers += stops[i].size();
+            passengers += stops[stopIndex].size();
             route.push_back(i);
         }
         else
         {
             busRoutes.push_back(route);
             route = std::vector<int>();
-            route.push_back(i);
-            passengers = stops[i].size();
+            route.push_back(stopIndex);
+            passengers = stops[stopIndex].size();
         }
     }
     busRoutes.push_back(route);
