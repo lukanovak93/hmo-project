@@ -11,3 +11,11 @@ void Hypermutation::mutate(Antibody &a)
         _mutations[i]->mutate(a);
     }
 }
+
+void Hypermutation::mutate(std::vector<Antibody> &population)
+{
+    for (int i = 0; i < population.size(); i++)
+    {
+        Hypermutation::mutate(population[i]);
+    }
+}

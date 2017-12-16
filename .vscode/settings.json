@@ -14,10 +14,11 @@
         "__bit_reference": "cpp",
         "__split_buffer": "cpp",
         "string": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "algorithm": "cpp"
     },
 
     "code-runner.executorMap": {
-        "cpp": "g++ main.cpp ProblemInstance.cpp Antibody.cpp RandomNumberGenerator.cpp Antigen.cpp CloneOperator.cpp Hypermutation.cpp ChangeStudentStationMutation.cpp -o main && ./main data/sbr1.txt"
+        "cpp": "g++ main.cpp ProblemInstance.cpp Antibody.cpp RandomNumberGenerator.cpp Antigen.cpp CloneOperator.cpp Hypermutation.cpp ChangeStudentStationMutation.cpp Clonalg.cpp -o main && ./main data/sbr1.txt"
     }
 }
