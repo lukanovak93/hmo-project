@@ -18,6 +18,6 @@
     },
 
     "code-runner.executorMap": {
-        "cpp": "g++ main.cpp ProblemInstance.cpp Antibody.cpp RandomNumberGenerator.cpp Antigen.cpp CloneOperator.cpp -o main && ./main data/sbr1.txt"
+        "cpp": "g++ main.cpp ProblemInstance.cpp Antibody.cpp RandomNumberGenerator.cpp Antigen.cpp CloneOperator.cpp Hypermutation.cpp ChangeStudentStationMutation.cpp -o main && ./main data/sbr1.txt"
     }
 }
