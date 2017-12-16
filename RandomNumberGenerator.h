@@ -1,5 +1,5 @@
-#include <random>       //All random generators
-#include <ctime>        //std::time
+#include <random>
+#include <ctime>
 
 class RandomNumberGenerator
 {
