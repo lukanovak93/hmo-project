@@ -20,3 +20,11 @@ void Antigen::evaluate(Antibody &a, ProblemInstance problem)
     }
     a.cost = totalCost;
 }
+
+void Antigen::evaluate(std::vector<Antibody> &population, ProblemInstance problem)
+{
+    for (int i = 0; i < population.size(); i++)
+    {
+        Antigen::evaluate(population[i], problem);
+    }
+}
