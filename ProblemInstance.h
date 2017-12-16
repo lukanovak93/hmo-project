@@ -19,4 +19,7 @@ class ProblemInstance
         static ProblemInstance readFromFile(std::string);
         std::vector<int> getAvailableStops(int);
         float getStopsDistance(int, int);
+        int getStopsCount();
+        int getStudentsCount();
+        int getBusCapacity();
 };

@@ -91,13 +91,13 @@ std::vector<std::vector<float> > calculateStopDistances(int stopsCount, std::vec
 
 ProblemInstance::ProblemInstance(int stopsCount, int studentsCount, float maxWalkingDistance, int busCapacity, std::vector<std::pair<float, float> > stops, std::vector<std::pair<float, float> > students)
 {
-    ProblemInstance::_stopsCount = stopsCount;
-    ProblemInstance::_studentsCount = studentsCount;
-    ProblemInstance::_busCapacity = busCapacity;
-    ProblemInstance::_stops = stops;
-    ProblemInstance::_students = students;
-    ProblemInstance::_availableStops = calculateAvailableStops(stopsCount, studentsCount, stops, students, maxWalkingDistance);
-    ProblemInstance::_stopDistances = calculateStopDistances(stopsCount, stops);
+    _stopsCount = stopsCount;
+    _studentsCount = studentsCount;
+    _busCapacity = busCapacity;
+    _stops = stops;
+    _students = students;
+    _availableStops = calculateAvailableStops(stopsCount, studentsCount, stops, students, maxWalkingDistance);
+    _stopDistances = calculateStopDistances(stopsCount, stops);
 }
 
 ProblemInstance::~ProblemInstance()
@@ -106,10 +106,25 @@ ProblemInstance::~ProblemInstance()
 
 std::vector<int> ProblemInstance::getAvailableStops(int studentIndex)
 {
-    return ProblemInstance::_availableStops[studentIndex];
+    return _availableStops[studentIndex];
 }
 
 float ProblemInstance::getStopsDistance(int fromStopIndex, int toStopIndex)
 {
-    return ProblemInstance::_stopDistances[fromStopIndex][toStopIndex];
+    return _stopDistances[fromStopIndex][toStopIndex];
+}
+
+int ProblemInstance::getStopsCount()
+{
+    return _stopsCount;
+}
+
+int ProblemInstance::getStudentsCount()
+{
+    return _studentsCount;
+}
+
+int ProblemInstance::getBusCapacity()
+{
+    return _busCapacity;
 }
