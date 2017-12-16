@@ -47,14 +47,14 @@ Antibody::Antibody(ProblemInstance problem, RandomNumberGenerator &random)
     // Shuffle stops
     std::vector<int> stopsShuffled;
     int n = problem.getStopsCount();
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i < n; i++)
     {
         stopsShuffled.push_back(i);
     }
     for (int i = 0; i < n; i++)
     {
-        int first = random.integer(n);
-        int second = random.integer(n);
+        int first = random.integer(n - 1);
+        int second = random.integer(n - 1);
         std::swap(stopsShuffled[first], stopsShuffled[second]);
     }
 
@@ -62,7 +62,7 @@ Antibody::Antibody(ProblemInstance problem, RandomNumberGenerator &random)
     int capacity = problem.getBusCapacity();
     int passengers = 0;
     std::vector<int> route;
-    for (int i = 0; i < stops.size(); i++)
+    for (int i = 0; i < stopsShuffled.size(); i++)
     {
         int stopIndex = stopsShuffled[i];
         if (passengers + stops[stopIndex].size() <= capacity)
