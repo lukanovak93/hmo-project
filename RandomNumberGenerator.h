@@ -1,5 +1,6 @@
 #include <random>
 #include <ctime>
+#pragma once
 
 class RandomNumberGenerator
 {
