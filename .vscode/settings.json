@@ -10,10 +10,14 @@
         "new": "cpp",
         "stdexcept": "cpp",
         "typeinfo": "cpp",
-        "memory": "cpp"
+        "memory": "cpp",
+        "__bit_reference": "cpp",
+        "__split_buffer": "cpp",
+        "string": "cpp",
+        "vector": "cpp"
     },
 
     "code-runner.executorMap": {
-        "cpp": "g++ main.cpp ProblemInstance.cpp Antibody.cpp RandomNumberGenerator.cpp Antigen.cpp -o main && ./main data/sbr1.txt"
+        "cpp": "g++ main.cpp ProblemInstance.cpp Antibody.cpp RandomNumberGenerator.cpp Antigen.cpp CloneOperator.cpp -o main && ./main data/sbr1.txt"
     }
 }
