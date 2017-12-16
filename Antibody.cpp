@@ -80,3 +80,8 @@ Antibody::Antibody(ProblemInstance problem, RandomNumberGenerator &random)
     }
     busRoutes.push_back(route);
 }
+
+ bool Antibody::operator< (const Antibody& a) const
+    {
+        return (cost < a.cost);
+    }

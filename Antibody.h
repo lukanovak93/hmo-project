@@ -11,4 +11,5 @@ class Antibody
         Antibody(ProblemInstance, RandomNumberGenerator &);
         Antibody(std::vector<std::vector<int> >, std::vector<std::vector<int> >);
         float cost;
+        bool operator< (const Antibody& a) const;
 };
