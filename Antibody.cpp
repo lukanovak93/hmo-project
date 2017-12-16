@@ -12,6 +12,12 @@ Antibody::Antibody(std::vector<std::vector<int> > busRoutes, std::vector<std::ve
 
 Antibody::Antibody(ProblemInstance problem, RandomNumberGenerator random)
 {
+    // Initialize stops
+    for (int i = 0; i < problem.getStopsCount(); i++)
+    {
+        stops.push_back(std::vector<int>());
+    }
+
     // Assign students to the stops
     for(int i = 0; i < problem.getStudentsCount(); i++)
     {
@@ -53,6 +59,7 @@ Antibody::Antibody(ProblemInstance problem, RandomNumberGenerator random)
         {
             busRoutes.push_back(route);
             route = std::vector<int>();
+            route.push_back(i);
             passengers = stops[i].size();
         }
     }
