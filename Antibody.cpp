@@ -10,7 +10,7 @@ Antibody::Antibody(std::vector<std::vector<int> > busRoutes, std::vector<std::ve
     Antibody::stops = stops;
 }
 
-Antibody::Antibody(ProblemInstance problem, RandomNumberGenerator random)
+Antibody::Antibody(ProblemInstance problem, RandomNumberGenerator &random)
 {
     // Initialize stops
     for (int i = 0; i < problem.getStopsCount(); i++)
@@ -42,6 +42,20 @@ Antibody::Antibody(ProblemInstance problem, RandomNumberGenerator random)
                 availableStops.erase(availableStops.begin() + j);
             }
         }
+    }
+
+    // Shuffle stops
+    std::vector<int> stopsShuffled;
+    int n = problem.getStopsCount();
+    for (int i = 0; i < n; i++)
+    {
+        stopsShuffled.push_back(i);
+    }
+    for (int i = 0; i < n; i++)
+    {
+        int first = random.integer(n);
+        int second = random.integer(n);
+        std::swap(stopsShuffled[first], stopsShuffled[second]);
     }
 
     // Assign stops to the buses

@@ -8,6 +8,7 @@ class Antibody
     public:
         std::vector<std::vector<int> > busRoutes;
         std::vector<std::vector<int> > stops;
-        Antibody(ProblemInstance, RandomNumberGenerator);
+        Antibody(ProblemInstance, RandomNumberGenerator &);
         Antibody(std::vector<std::vector<int> >, std::vector<std::vector<int> >);
+        float cost;
 };
