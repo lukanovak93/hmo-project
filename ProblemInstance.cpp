@@ -53,7 +53,7 @@ std::vector<std::vector<int> > calculateAvailableStops(int stopsCount, int stude
         float student_y = students[i].second;
         std::vector<int> available;
         
-        for (int j = 0; j < stopsCount; j++)
+        for (int j = 1; j < stopsCount; j++)
         {
             float stop_x = stops[j].first;
             float stop_y = stops[j].second;
