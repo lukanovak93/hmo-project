@@ -1,6 +1,9 @@
 #include "Hypermutation.h"
 
-Hypermutation::Hypermutation(std::vector<IMutation*> mutations) : _mutations(mutations)
+Hypermutation::Hypermutation(std::vector<IMutation*> mutations, RandomNumberGenerator random, ProblemInstance problem) : 
+    _mutations(mutations),
+    _random(random),
+    _problem(problem)
 {
 }
 
@@ -8,7 +11,7 @@ void Hypermutation::mutate(Antibody &a)
 {
     for (int i = 0; i < _mutations.size(); i++)
     {
-        _mutations[i]->mutate(a);
+        _mutations[i]->mutate(a, _random, _problem);
     }
 }
 
