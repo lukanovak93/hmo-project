@@ -4,6 +4,6 @@
 class IMutation
 {
     public:
-        virtual void mutate(Antibody &) = 0;
+        virtual void mutate(Antibody &, RandomNumberGenerator &, ProblemInstance) = 0;
         virtual ~IMutation() { }
 };
